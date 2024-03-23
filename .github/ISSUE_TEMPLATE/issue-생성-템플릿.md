@@ -1,7 +1,7 @@
 ---
 name: Issue 생성 템플릿
 about: 이슈를 생성해 주세요!
-title: "[FEAT/SETTING/DESIGN/FIX/REFACTOR/DOCS] 이슈 제목"
+title: "[FEAT/FIX/DOCS/DESIGN/REFACTOR/CHORE] 이슈 제목"
 labels: ''
 assignees: ''
 
