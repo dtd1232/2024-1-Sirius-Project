@@ -4,14 +4,22 @@ using UnityEngine;
 
 public abstract class ObstacleScript : MonoBehaviour
 {
+    public enum ObstaclePassKeywordsEnum
+    {
+        jump,
+        slide,
+        tackle,
+        attack,
+        dodge,
 
+    }
 
-    public Dictionary<string, string> ObstaclePassKeywords = new Dictionary<string, string>() {
-        { "jump", "jump" },
-        { "slide", "slide" },
-        { "tackle", "tackle" },
-        { "attack", "attack" },
-        { "dodge", "dodge" },
+    public Dictionary<ObstaclePassKeywordsEnum, string> ObstaclePassKeywords = new Dictionary<ObstaclePassKeywordsEnum, string>() {
+        { ObstaclePassKeywordsEnum.jump, "jump" },
+        { ObstaclePassKeywordsEnum.slide, "slide" },
+        { ObstaclePassKeywordsEnum.tackle, "tackle" },
+        { ObstaclePassKeywordsEnum.attack, "attack" },
+        { ObstaclePassKeywordsEnum.dodge, "dodge" },
     };
     public List<string> thisPassKeywords;
 
