@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "2024-1-Sirius-Project.sln"
+    "dotnet.defaultSolution": "2024-1-Sirius-Project.sln",
+    "dotnet.preferCSharpExtension": true
 }
