@@ -22,9 +22,14 @@ public class inputHandling : MonoBehaviour
         }
     }
 
-    public void saveText()
+    private void saveText()
     {
-        this.input =  inputField.text;
+        this.input = inputField.text;
         Debug.Log("Input Text: " + input);
+    }
+
+    public string getText()
+    {
+        return this.input;
     }
 }
