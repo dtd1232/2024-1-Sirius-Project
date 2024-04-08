@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleGenerater : MonoBehaviour
 {
-    public float generateFrequency;
+    public float generateFrequency = 5.0f;
     
     [SerializeField] private List<GameObject> obstacleArray;
     
@@ -19,5 +19,10 @@ public class ObstacleGenerater : MonoBehaviour
     void Update()
     {
         
+    }
+
+    IEnumerator GenerateObstacle()
+    {
+        yield return new WaitForSeconds(generateFrequency);
     }
 }
