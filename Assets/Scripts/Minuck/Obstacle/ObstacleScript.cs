@@ -4,15 +4,6 @@ using UnityEngine;
 
 public abstract class ObstacleScript : MonoBehaviour
 {
-    public enum ObstaclePassKeywordsEnum
-    {
-        jump,
-        slide,
-        tackle,
-        attack,
-        dodge,
-
-    }
 
     public Dictionary<ObstaclePassKeywordsEnum, string> ObstaclePassKeywords = new Dictionary<ObstaclePassKeywordsEnum, string>() {
         { ObstaclePassKeywordsEnum.jump, "jump" },
