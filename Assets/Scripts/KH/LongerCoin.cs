@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LongerCoin : MonoBehaviour
 {
-    public string input;
+    private string input;
     public int coin=0;
-    public List<string> passKeyword;
+    private List<string> passKeyword;
     [SerializeField] int coinProbability;
-    public GameObject handling;
+    private GameObject handling;
     private List<string> enemyAction;
     void Start()
     {
