@@ -13,17 +13,6 @@ public abstract class ObstacleScript : MonoBehaviour
         { ObstaclePassKeywordsEnum.dodge, "dodge" },
     };
 
-    public enum ObstacleTypeEnum
-    {
-        box,
-        spike,
-        hurdle,
-        slide,
-        wall,
-        moving_spike,
-        enemy,
-        flying_enemy
-    }
 
     public ObstacleTypeEnum obstacleType;
 
