@@ -33,7 +33,7 @@ public class ObstacleGenerater : MonoBehaviour
                 int num = Random.Range(0, obstacleArray.Count);  // 정확한 랜덤 인덱스 계산
                 Debug.Log(num);
 
-
+                // 추후 이 부분에서 하드코딩된거 변수화 하거나 위치 조정
                 Instantiate(obstacleArray[num], new Vector3(20.0f, 0.0f, 0.0f), this.transform.rotation);
                 generateCountforEachType[num]++;
             }
