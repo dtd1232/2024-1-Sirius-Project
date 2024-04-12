@@ -22,6 +22,7 @@ public class LongerCoin : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
+        Debug.Log("Collider");
         //Random randGen = new Random();
         int randval;
         enemyAction = other.gameObject.GetComponent<ObstacleScript>().thisPassKeywords;
@@ -41,7 +42,7 @@ public class LongerCoin : MonoBehaviour
 
     void GetCoin(){
         coin++;
-        Debug.Log(coin); // coin 확인용으로 만들어놨음
+        Debug.Log("coin : " + coin); // coin 확인용으로 만들어놨음
     }
 
 }
