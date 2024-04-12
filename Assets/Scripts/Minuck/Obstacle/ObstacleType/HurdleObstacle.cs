@@ -7,6 +7,7 @@ public class HurdleObstacle : ObstacleScript
     // Start is called before the first frame update
     void Start()
     {
+        obstacleType = ObstacleTypeEnum.hurdle;
         thisPassKeywords.Add(ObstaclePassKeywords[ObstaclePassKeywordsEnum.jump]);
         thisPassKeywords.Add(ObstaclePassKeywords[ObstaclePassKeywordsEnum.slide]);
     }

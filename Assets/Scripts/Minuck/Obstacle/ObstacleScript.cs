@@ -21,6 +21,21 @@ public abstract class ObstacleScript : MonoBehaviour
         { ObstaclePassKeywordsEnum.attack, "attack" },
         { ObstaclePassKeywordsEnum.dodge, "dodge" },
     };
+
+    public enum ObstacleTypeEnum
+    {
+        box,
+        spike,
+        hurdle,
+        slide,
+        wall,
+        moving_spike,
+        enemy,
+        flying_enemy
+    }
+
+    public ObstacleTypeEnum obstacleType;
+
     public List<string> thisPassKeywords;
 
     [HideInInspector] public float speed = 5.0f;

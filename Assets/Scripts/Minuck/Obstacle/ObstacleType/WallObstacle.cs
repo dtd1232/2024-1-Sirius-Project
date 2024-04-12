@@ -8,6 +8,7 @@ public class WallObstacle : ObstacleScript
     // Start is called before the first frame update
     void Start()
     {
+        obstacleType = ObstacleTypeEnum.wall;
         thisPassKeywords.Add(ObstaclePassKeywords[ObstaclePassKeywordsEnum.tackle]);
     }
 
