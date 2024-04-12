@@ -11,9 +11,4 @@ public class SpikeObstacle : ObstacleScript
         thisPassKeywords.Add(ObstaclePassKeywords[ObstaclePassKeywordsEnum.jump]);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

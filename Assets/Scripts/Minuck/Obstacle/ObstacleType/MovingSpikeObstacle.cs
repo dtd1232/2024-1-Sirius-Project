@@ -9,10 +9,4 @@ public class MovingSpikeObstacle : ObstacleScript
     {
         thisPassKeywords.Add(ObstaclePassKeywords[ObstaclePassKeywordsEnum.jump]);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

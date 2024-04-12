@@ -23,15 +23,27 @@ public abstract class ObstacleScript : MonoBehaviour
     };
     public List<string> thisPassKeywords;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [HideInInspector] public float speed = 5.0f;
 
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
+        Remove();
+    }
+
+    void Move()
+    {
+ 
+        transform.Translate(-speed * Time.deltaTime, 0, 0);
+    }
+
+    void Remove()
+    {
+        if (transform.position.x <= -20.0f)
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 }

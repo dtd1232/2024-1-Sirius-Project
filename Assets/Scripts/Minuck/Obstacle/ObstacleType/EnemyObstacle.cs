@@ -10,10 +10,4 @@ public class EnemyObstacle : ObstacleScript
         thisPassKeywords.Add(ObstaclePassKeywords[ObstaclePassKeywordsEnum.dodge]);
         thisPassKeywords.Add(ObstaclePassKeywords[ObstaclePassKeywordsEnum.attack]);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

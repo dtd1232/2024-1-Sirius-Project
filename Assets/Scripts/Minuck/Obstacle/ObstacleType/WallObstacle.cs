@@ -11,9 +11,4 @@ public class WallObstacle : ObstacleScript
         thisPassKeywords.Add(ObstaclePassKeywords[ObstaclePassKeywordsEnum.tackle]);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
