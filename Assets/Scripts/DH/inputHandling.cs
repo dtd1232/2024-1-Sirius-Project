@@ -7,13 +7,13 @@ using TMPro;
 public class inputHandling : MonoBehaviour
 {
 
-    private string input;
+    private static string input;
     [SerializeField]
     private TMP_InputField inputField;
 
     void Update()
     {
-        inputField.ActivateInputField();
+        inputField.ActivateInputField();    
         
 
         if (Input.GetKeyDown(KeyCode.Return) ){
@@ -24,12 +24,12 @@ public class inputHandling : MonoBehaviour
 
     private void saveText()
     {
-        this.input = inputField.text;
+        input = inputField.text;
         Debug.Log("Input Text: " + input);
     }
 
-    public string getText()
+    public static string getText()
     {
-        return this.input;
+        return input;
     }
 }
