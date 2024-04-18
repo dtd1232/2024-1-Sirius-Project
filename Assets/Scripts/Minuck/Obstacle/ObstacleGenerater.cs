@@ -1,39 +1,41 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleGenerater : MonoBehaviour
 {
     [HideInInspector] public float generateFrequency = 5.0f;
-    public List<int> generateCountforEachType;
 
+    public List<int> generateCountforEachType;
     [SerializeField] private List<GameObject> obstacleArray;
-    
-    
+    [SerializeField] private List<bool> isItFirstTimeObstacle;
+
     // Start is called before the first frame update
     void Start()
     {
         generateFrequency = 5.0f;
-        StartCoroutine(GenerateObstacle());
 
         for (int i = 0; i < obstacleArray.Count; i++)
         {
             generateCountforEachType.Add(0);
+            isItFirstTimeObstacle.Add(false);
         }
+
+        StartCoroutine(GenerateObstacle());
     }
 
     IEnumerator GenerateObstacle()
     {
-        while (true)  // ¹«ÇÑ ¹İº¹À» ÅëÇØ Áö¼ÓÀûÀ¸·Î Àå¾Ö¹° »ı¼º
+        while (true)  // ë¬´í•œ ë°˜ë³µì„ í†µí•´ ì§€ì†ì ìœ¼ë¡œ ì¥ì• ë¬¼ ìƒì„±
         {
             yield return new WaitForSeconds(generateFrequency);
 
-            if (obstacleArray.Count > 0)  // Àå¾Ö¹° ¹è¿­ÀÌ ºñ¾îÀÖÁö ¾ÊÀºÁö È®ÀÎ
+            if (obstacleArray.Count > 0)  // ì¥ì• ë¬¼ ë°°ì—´ì´ ë¹„ì–´ìˆì§€ ì•Šì€ì§€ í™•ì¸
             {
-                int num = Random.Range(0, obstacleArray.Count);  // Á¤È®ÇÑ ·£´ı ÀÎµ¦½º °è»ê
+                int num = Random.Range(0, obstacleArray.Count);  // ì •í™•í•œ ëœë¤ ì¸ë±ìŠ¤ ê³„ì‚°
                 Debug.Log(num);
 
-                // ÃßÈÄ ÀÌ ºÎºĞ¿¡¼­ ÇÏµåÄÚµùµÈ°Å º¯¼öÈ­ ÇÏ°Å³ª À§Ä¡ Á¶Á¤
+                // ì¶”í›„ ì´ ë¶€ë¶„ì—ì„œ í•˜ë“œì½”ë”©ëœê±° ë³€ìˆ˜í™” í•˜ê±°ë‚˜ ìœ„ì¹˜ ì¡°ì •
                 Instantiate(obstacleArray[num], new Vector3(20.0f, 0.0f, 0.0f), this.transform.rotation);
                 generateCountforEachType[num]++;
             }
