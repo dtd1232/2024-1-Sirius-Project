@@ -43,6 +43,8 @@ public class ObstacleGenerater : MonoBehaviour
                     GameObject keywordGuideTextasChild = Instantiate(keywordGuideText, obstacle.transform);
 
                     keywordGuideTextasChild.transform.localPosition = new Vector3(0, 1.5f, 0);
+
+                    Debug.Log(obstacle.GetComponent<ObstacleScript>().thisPassKeywords.ToArray().ToString());
                 }
                 generateCountforEachType[num]++;
 
