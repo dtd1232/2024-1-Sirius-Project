@@ -35,25 +35,18 @@ public class ObstacleGenerater : MonoBehaviour
                 int num = Random.Range(0, obstacleArray.Count);  // 정확한 랜덤 인덱스 계산
 
                 // 추후 이 부분에서 하드코딩된거 변수화 하거나 위치 조정
-                GameObject obstacle = Instantiate(obstacleArray[num], new Vector3(20.0f, 0.0f, 0.0f), this.transform.rotation);
+                GameObject obstacle = Instantiate(obstacleArray[num], new Vector3(20.0f, -3.0f, 0.0f), this.transform.rotation);
 
                 // 처음 나오는 Obstacle이면 키워드 알려주는 텍스트 생성
                 if (generateCountforEachType[num] == 0)
                 {
                     GameObject keywordGuideTextasChild = Instantiate(keywordGuideText, obstacle.transform);
 
-                    keywordGuideTextasChild.transform.localPosition = new Vector3(0, 1.5f, 0);
-
-                    List<string> enemyAction = obstacle.gameObject.GetComponent<ObstacleScript>().thisPassKeywords;
-
-                    for (int i = 0; i < enemyAction.Count; i++)
-                    {
-                        Debug.Log(enemyAction[i]);
-                    }
-
-                    generateCountforEachType[num]++;
+                    keywordGuideTextasChild.transform.localPosition = new Vector3(0, 1.5f, 0);                
                 }
-                
+
+                generateCountforEachType[num]++;
+
             }
         }
     }
