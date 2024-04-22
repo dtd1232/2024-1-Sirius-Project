@@ -15,16 +15,9 @@ public class KewordGuideTextScript : MonoBehaviour
 
         for (int i  = 0; i < keywords.Count; i++)
         {
-            // Debug.Log(keywords[i]);
             guideText = guideText + keywords[i] + "\n";
         }
 
         this.GetComponent<TextMeshPro>().text = guideText;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
