@@ -2,29 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AvailablePlayerBehaviorsScript : MonoBehaviour
 {
     [SerializeField] private GameObject AvailablePlayerBehaviorPanelTemplate;
-
+    [SerializeField] private TMP_InputField inputField;
     private List<GameObject> AvailablePlayerBehaviorPanelList = new List<GameObject>();
     private Queue<GameObject> AvailablePlayerBehaviorPanelQueue = new Queue<GameObject>();
     private int maxCountOfPanalList = 3;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A)) {
-            int rand = Random.Range(0, 10);
-            Debug.Log(rand);
-            UpdateAvailablePlayerBehaviorPanelList(rand.ToString());
-        }
+        inputField.onEndEdit.AddListener(UpdateAvailablePlayerBehaviorPanelList);
     }
 
     public void UpdateAvailablePlayerBehaviorPanelList(string keyword)
