@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ObstacleGenerater : MonoBehaviour
+public class ObstacleManager : MonoBehaviour
 {
     [HideInInspector] public float generateFrequency = 5.0f;
 
@@ -49,5 +49,10 @@ public class ObstacleGenerater : MonoBehaviour
 
             }
         }
+    }
+
+    public void getClearedObstacle()
+    {
+
     }
 }
