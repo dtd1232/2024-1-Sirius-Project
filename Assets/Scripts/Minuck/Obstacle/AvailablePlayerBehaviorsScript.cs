@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class AvailablePlayerBehaviorsScript : MonoBehaviour
 {
     [SerializeField] private GameObject AvailablePlayerBehaviorPanelTemplate;
-    [SerializeField] private TMP_InputField inputField;
-    private List<GameObject> AvailablePlayerBehaviorPanelList = new List<GameObject>();
-    private Queue<GameObject> AvailablePlayerBehaviorPanelQueue = new Queue<GameObject>();
+    [SerializeField] private InputCheckerScript inputCheckerScript;
+    private List<GameObject> AvailablePlayerBehaviorPanelList = new();
+    private Queue<GameObject> AvailablePlayerBehaviorPanelQueue = new();
     private int maxCountOfPanalList = 3;
 
     private void Start()
     {
-        inputField.onEndEdit.AddListener(UpdateAvailablePlayerBehaviorPanelList);
+        inputCheckerScript.CorrectKeywordEventWithInput.AddListener(UpdateAvailablePlayerBehaviorPanelList);
     }
 
     public void UpdateAvailablePlayerBehaviorPanelList(string keyword)
