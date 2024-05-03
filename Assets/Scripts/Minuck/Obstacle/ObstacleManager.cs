@@ -50,9 +50,4 @@ public class ObstacleManager : MonoBehaviour
             }
         }
     }
-
-    public void GetClearedObstacle()
-    {
-
-    }
 }

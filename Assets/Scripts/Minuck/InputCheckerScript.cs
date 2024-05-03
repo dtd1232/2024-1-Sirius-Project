@@ -51,25 +51,21 @@ public class InputCheckerScript : MonoBehaviour
 
     private void CorrectKeyword()
     {
-        Debug.Log("CorrectKeywordEvent Invoked");
         CorrectKeywordEvent.Invoke();
     }
 
     private void CorrectKeyword(string input)
     {
-        Debug.Log("CorrectKeywordEventWithInput Invoked");
         CorrectKeywordEventWithInput.Invoke(input);
     }
 
     private void IncorrectKeyword()
     {
-        Debug.Log("IncorrectKeywordEvent Invoked");
         IncorrectKeywordEvent.Invoke();
     }
 
     private void IncorrectKeyword(string input)
     {
-        Debug.Log("IncorrectKeywordEventWithInput Invoked");
         IncorrectKeywordEventWithInput.Invoke(input);
     }
 
