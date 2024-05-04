@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AvailablePlayerBehaviorPanelTemplate: {fileID: 5318419359289412708, guid: 648ab65d1531e634da5e21c8fbbfa64c, type: 3}
-  inputField: {fileID: 789667551}
+  inputCheckerScript: {fileID: 1549339643}
 --- !u!1 &1247243801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,6 +2649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c388492c326f41439b8356e926bf47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: 
   inputField: {fileID: 110323317}
   CorrectKeywordEvent:
     m_PersistentCalls:
