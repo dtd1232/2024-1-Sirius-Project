@@ -9,8 +9,8 @@ public class AvailablePlayerBehaviorsScript : MonoBehaviour
     [SerializeField] private GameObject AvailablePlayerBehaviorPanelTemplate;
     [SerializeField] private InputCheckerScript inputCheckerScript;
     private List<GameObject> AvailablePlayerBehaviorPanelList = new();
-    private Queue<GameObject> AvailablePlayerBehaviorPanelQueue = new();
-    private int maxCountOfPanalList = 3;
+    private List<string> AvailablePlayerBehaviorStringList = new();
+
 
     private void Start()
     {
@@ -19,24 +19,16 @@ public class AvailablePlayerBehaviorsScript : MonoBehaviour
 
     public void UpdateAvailablePlayerBehaviorPanelList(string keyword)
     {
-        GameObject newPanel = Instantiate(AvailablePlayerBehaviorPanelTemplate, this.transform, false);
-        newPanel.GetComponentInChildren<TextMeshProUGUI>().text = keyword;
-
-        AvailablePlayerBehaviorPanelQueue.Enqueue(newPanel);
-
-        if (AvailablePlayerBehaviorPanelQueue.Count > maxCountOfPanalList)
+        if (!AvailablePlayerBehaviorStringList.Contains(keyword))
         {
-            GameObject oldPanel = AvailablePlayerBehaviorPanelQueue.Dequeue();
-            Destroy(oldPanel);
+            AvailablePlayerBehaviorStringList.Add(keyword);
+
+            GameObject newPanel = Instantiate(AvailablePlayerBehaviorPanelTemplate, this.transform, false);
+            newPanel.GetComponentInChildren<TextMeshProUGUI>().text = keyword;
+            AvailablePlayerBehaviorPanelList.Add(newPanel);
         }
 
-        AvailablePlayerBehaviorPanelList.Clear();
-        foreach (GameObject item in AvailablePlayerBehaviorPanelQueue)
-        {
-            AvailablePlayerBehaviorPanelList.Add(item);
-        }
-
-        for (int i = 0; i < AvailablePlayerBehaviorPanelQueue.Count; i++)
+        for (int i = 0; i < AvailablePlayerBehaviorPanelList.Count; i++)
         {
             AvailablePlayerBehaviorPanelList[i].GetComponent<RectTransform>().localPosition = new Vector3(110 * i, 0, 0);
         }
