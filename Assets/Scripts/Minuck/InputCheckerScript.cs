@@ -19,9 +19,10 @@ public class InputCheckerScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        input = inputField.GetComponent<inputHandling>().getText();
+        input = inputField.GetComponent<InputHandlingWithEvent>().getText();
         isCorrect = false;
 
+        // 부딪힌 대상에 ObstacleScript가 없을 경우, 즉 Enemy가 아닐 경우는 아무것도 하지 않음.
         if (!other.gameObject.TryGetComponent<ObstacleScript>(out var obstacleScriptComponent))
         {
             return;
