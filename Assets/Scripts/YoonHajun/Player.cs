@@ -1,20 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using static System.String;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    private inputHandling _inputHandling;
+    [SerializeField] private inputHandling _inputHandling;
     private string input = "";
     private Rigidbody2D rigid;
-    private bool isJump = false;
-    private bool isSlide = false;
-    private bool canMove = false; // 플레이어가 움직일 수 있는지 여부를 나타내는 플래그
+    private bool isJump;
+    private bool isSlide;
+    private string _getText;
 
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        _inputHandling = gameObject.AddComponent<inputHandling>();        
     }
 
     void Update()
@@ -24,25 +25,27 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
-        isJump = true; // 점프 했음을 표시
-        ResetNextAction();
+        if (isJump)
+        {
+            rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+            isJump = false;
+        }
     }
 
     void Slide()
     {
         // Slide 동작 수행 후 다음 행동을 재설정
-        isSlide = true;
-        ResetNextAction();
+        if (isSlide)
+        {
+            isSlide = false;
+        }
     }
 
     void ResetNextAction()
     {
-        // 다음 행동 리셋
         input = "";
-        isJump = false; // 점프 상태 초기화
-        isSlide = false; // 슬라이드 상태 초기화
-        canMove = false;
+        isJump = false;
+        isSlide = false;
     }
 
     void Die()
@@ -54,17 +57,26 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        Jump jumpEnemy = other.gameObject.GetComponent<Jump>();
+        Slide slideEnemy = other.gameObject.GetComponent<Slide>();
+
+        
+        if (jumpEnemy != null && Compare(input, jumpEnemy.value) == 0)
         {
-            Jump jumpEnemy = other.gameObject.GetComponent<Jump>();
-            Slide slideEnemy = other.gameObject.GetComponent<Slide>();
-            if (input == jumpEnemy.GetStringValue()) {
-                Jump();
-            } else if (input == slideEnemy.GetStringValue()) {
-                Slide();
-            } else {
-                Die();
-            }
+            isJump = true;
+            Jump();
+        } 
+        else if (slideEnemy != null && Compare(input, slideEnemy.value) == 0)
+        {
+            isSlide = true;
+            Slide();
         }
+        else
+        {
+            Die();
+        }
+        
+        ResetNextAction();
     }
+
 }
