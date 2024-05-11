@@ -7,7 +7,7 @@ using TMPro;
 public class inputHandling : MonoBehaviour
 {
 
-    private static string input;
+    private string input;
     [SerializeField]
     private TMP_InputField inputField;
 
@@ -28,8 +28,8 @@ public class inputHandling : MonoBehaviour
         Debug.Log("Input Text: " + input);
     }
 
-    public static string getText()
+    public string getText()
     {
-        return input;
+        return this.input;
     }
 }

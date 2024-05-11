@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Slide : MonoBehaviour
 {
-    public static string input;
+    public string value;
     public float speed;
     // Start is called before the first frame update
     void Start()
     {
-        input = "slide";
+        value = "slide";
     }
 
     // Update is called once per frame
@@ -17,5 +17,10 @@ public class Slide : MonoBehaviour
     {
         transform.Translate(new Vector3(-speed * Time.deltaTime, 0f,0f));
 
+    }
+    
+    public string GetStringValue()
+    {
+        return this.value;
     }
 }
