@@ -9,8 +9,6 @@ public class InputHandlingWithEvent : MonoBehaviour
     private string input;
     [SerializeField] private TMP_InputField inputField;
 
-    public UnityEvent<string> InputEventWithString;
-
     private void Start()
     {
         inputField = GetComponent<TMP_InputField>();    
@@ -19,15 +17,6 @@ public class InputHandlingWithEvent : MonoBehaviour
     void Update()
     {
         inputField.ActivateInputField();
-
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            this.input = inputField.text;
-            Debug.Log("Input Text: " + input);
-            inputField.text = "";
-            InvokeInputEventWithString(input);
-        }
     }
 
     public string getText()
@@ -35,8 +24,10 @@ public class InputHandlingWithEvent : MonoBehaviour
         return this.input;
     }
 
-    private void InvokeInputEventWithString(string input)
+    public void SaveText(string input)
     {
-        InputEventWithString.Invoke(input);
+        this.input = input;
+        Debug.Log("Input Text: " + input);
+        inputField.text = "";
     }
 }
