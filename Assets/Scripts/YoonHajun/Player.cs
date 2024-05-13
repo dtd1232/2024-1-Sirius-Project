@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,7 +13,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigid;
     private bool isJump;
     private bool isSlide;
-    private string _getText;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
         input = _inputHandling.getText();
     }
 
@@ -28,7 +30,7 @@ public class PlayerController : MonoBehaviour
         if (isJump)
         {
             rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
-            isJump = false;
+            ResetNextAction();
         }
     }
 
@@ -37,7 +39,7 @@ public class PlayerController : MonoBehaviour
         // Slide 동작 수행 후 다음 행동을 재설정
         if (isSlide)
         {
-            isSlide = false;
+            ResetNextAction();
         }
     }
 
@@ -59,14 +61,14 @@ public class PlayerController : MonoBehaviour
     {
         Jump jumpEnemy = other.gameObject.GetComponent<Jump>();
         Slide slideEnemy = other.gameObject.GetComponent<Slide>();
-
         
-        if (jumpEnemy != null && Compare(input, jumpEnemy.value) == 0)
-        {
+        
+        if (jumpEnemy != null && input == jumpEnemy.GetStringValue())
+        { 
             isJump = true;
             Jump();
         } 
-        else if (slideEnemy != null && Compare(input, slideEnemy.value) == 0)
+        else if (slideEnemy != null && input == slideEnemy.GetStringValue())
         {
             isSlide = true;
             Slide();
@@ -75,8 +77,7 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
-        
+
         ResetNextAction();
     }
-
 }

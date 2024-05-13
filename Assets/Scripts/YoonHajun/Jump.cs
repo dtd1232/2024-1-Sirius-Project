@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    public string value;
+    private string value;
     private float speed = 3;
     void Start()
     {
