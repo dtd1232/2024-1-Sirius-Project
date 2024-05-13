@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DH/Select_chr.unity
     guid: fe1e750ff23974430ac1bc679d4f6eb0
+  - enabled: 1
+    path: Assets/Scenes/KH/ProgressScene.unity
+    guid: 40419a079aa092846b6e4e280ddd2b9c
+  - enabled: 1
+    path: Assets/Scenes/KH/KH_Scene.unity
+    guid: c0c25e56ad88a24498f17519905aa1c4
   m_configObjects: {}
