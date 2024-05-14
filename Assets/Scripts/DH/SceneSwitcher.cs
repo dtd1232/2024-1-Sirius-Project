@@ -21,7 +21,6 @@ public class SceneSwitcher : MonoBehaviour
             if (inputHandler.getText() != null)
             {
                 currentText = inputHandler.getText().ToLower();
-                Debug.Log("Current text: " + currentText);
             }
 
             if (!string.IsNullOrEmpty(currentText))
