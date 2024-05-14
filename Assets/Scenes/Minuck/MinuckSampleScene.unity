@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 108230731}
   - component: {fileID: 108230730}
   m_Layer: 0
-  m_Name: ObstacleGenerator
+  m_Name: ObstacleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generateFrequency: 0
+  generateCountforEachType: 
   obstacleArray:
   - {fileID: 4751605718497610341, guid: baf6ca69866e95947912ee4d420c07e6, type: 3}
   - {fileID: 7232776103404208783, guid: a17d483a99123c94aadc6d2dafa7c9cd, type: 3}
@@ -163,6 +164,7 @@ MonoBehaviour:
   - {fileID: 3244914276556890268, guid: 3d9673d827c50284eb7ac804aabb4f1f, type: 3}
   - {fileID: 6799938586807096542, guid: d3df2e06c363c9b4598c188ea17efe79, type: 3}
   - {fileID: 5562333874366894389, guid: 8d753575035a7384dac1d91cfe6b6800, type: 3}
+  isItFirstTimeObstacle: 
 --- !u!114 &108230731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generateFrequency: 0
+  generateCountforEachType: 
   obstacleArray: []
+  isItFirstTimeObstacle: 
 --- !u!4 &108230732
 Transform:
   m_ObjectHideFlags: 0

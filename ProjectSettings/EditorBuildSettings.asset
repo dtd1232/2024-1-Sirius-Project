@@ -5,10 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/YoonHajun/Main.unity
-    guid: 6e1b416fdba5a41a5a66285ea8f01d42
+    path: Assets/Scenes/DH/DH_sample.unity
+    guid: fd680763f234a4613a877c5d889376a8
+  - enabled: 1
+    path: Assets/Scenes/DH/Options.unity
+    guid: bf86c79834cf14557872432cd1f16e02
+  - enabled: 1
+    path: Assets/Scenes/DH/Main.unity
+    guid: 7baa3a7f33e1d4611b67f9f20bfcafcb
+  - enabled: 1
+    path: Assets/Scenes/DH/Select_chr.unity
+    guid: fe1e750ff23974430ac1bc679d4f6eb0
   m_configObjects: {}
