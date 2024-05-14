@@ -13,7 +13,7 @@ public class inputHandling : MonoBehaviour
 
     void Update()
     {
-        inputField.ActivateInputField();
+        inputField.ActivateInputField();    
         
 
         if (Input.GetKeyDown(KeyCode.Return) ){
@@ -24,7 +24,7 @@ public class inputHandling : MonoBehaviour
 
     private void saveText()
     {
-        this.input = inputField.text;
+        input = inputField.text;
         Debug.Log("Input Text: " + input);
     }
 
