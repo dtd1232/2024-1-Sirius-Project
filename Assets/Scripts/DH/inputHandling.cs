@@ -14,14 +14,13 @@ public class inputHandling : MonoBehaviour
 
     void Update()
     {
-
-        inputField.ActivateInputField();
-        if(getBool){
-			input = "";
-			Debug.Log("setting input: " + input);
-			getBool = false;
-			Debug.Log(getBool);
-		}
+      inputField.ActivateInputField();
+      if(getBool){
+			  input = "";
+			  Debug.Log("setting input: " + input);
+			  getBool = false;
+			  Debug.Log(getBool);
+		  }
 		
         if (Input.GetKeyDown(KeyCode.Return) ){
             saveText();
@@ -31,7 +30,9 @@ public class inputHandling : MonoBehaviour
 
     private void saveText()
     {
+
         this.input = inputField.text;
+        Debug.Log("Input Text: " + input);
     }
 
     public string getText()
