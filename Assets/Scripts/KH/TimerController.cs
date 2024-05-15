@@ -13,6 +13,7 @@ public class TimerController : MonoBehaviour
     [SerializeField] GameObject gameOver;
     private float currentTime;
     [SerializeField] float maxTime = 120.0f;
+    [SerializeField] float waitSecond = 3.0f;
     private IEnumerator coroutine;
     private bool isCorrect;
     void Start()
@@ -29,8 +30,7 @@ public class TimerController : MonoBehaviour
     void Update(){
         isCorrect = player.gameObject.GetComponent<LongerCoin>().IsCorrectKeyword();
         if(isCorrect==false) {
-            Debug.Log("Gameover");
-            GameOver();
+            StartCoroutine(GameOver());
         }
     }
 
@@ -42,7 +42,7 @@ public class TimerController : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
         trialEnded.SetActive(true);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(waitSecond);
         trialEnded.SetActive(false);
         toMainButton.SetActive(true);
     }
@@ -51,9 +51,10 @@ public class TimerController : MonoBehaviour
         SceneManager.LoadScene("KH_Scene");
     }
 
-    public void GameOver(){
-        StopCoroutine(progress());
+    public IEnumerator GameOver(){
+        StopCoroutine(coroutine);
         gameOver.SetActive(true);
-        Invoke("toMain", 2);
+        yield return new WaitForSeconds(waitSecond);
+        ToMain();
     }
 }

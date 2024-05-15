@@ -33,7 +33,6 @@ public class LongerCoin : MonoBehaviour
         for(int i=0; i<enemyAction.Count; i++){
             //대소문자를 무시한 input과 장애물 키워드가 같고, 키워드가 2개 이상이라면 실행됨
             if(string.Compare(input, enemyAction[i], System.StringComparison.OrdinalIgnoreCase)==0){
-                Debug.Log("Check");
                 flag++;
                 if(enemyAction.Count>=2){
                 //입력한 단어가 다른 단어보다 길이가 길면 실행됨
