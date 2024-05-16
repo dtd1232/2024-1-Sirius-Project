@@ -8,14 +8,20 @@ public class inputHandling : MonoBehaviour
 {
 
     private string input;
+    private bool getBool = false; 
     [SerializeField]
     private TMP_InputField inputField;
 
     void Update()
     {
-        inputField.ActivateInputField();
-        
-
+      inputField.ActivateInputField();
+      if(getBool){
+			  input = "";
+			  Debug.Log("setting input: " + input);
+			  getBool = false;
+			  Debug.Log(getBool);
+		  }
+		
         if (Input.GetKeyDown(KeyCode.Return) ){
             saveText();
             inputField.text = "";
@@ -24,12 +30,15 @@ public class inputHandling : MonoBehaviour
 
     private void saveText()
     {
+
         this.input = inputField.text;
         Debug.Log("Input Text: " + input);
     }
 
     public string getText()
     {
+        getBool = true;
+		Debug.Log(getBool);
         return this.input;
     }
 }
