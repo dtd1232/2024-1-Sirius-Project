@@ -17,9 +17,9 @@ public class inputHandling : MonoBehaviour
       inputField.ActivateInputField();
       if(getBool){
 			  input = "";
-			  Debug.Log("setting input: " + input);
+			  //Debug.Log("setting input: " + input);
 			  getBool = false;
-			  Debug.Log(getBool);
+			  //Debug.Log(getBool);
 		  }
 		
         if (Input.GetKeyDown(KeyCode.Return) ){
@@ -32,12 +32,12 @@ public class inputHandling : MonoBehaviour
     {
 
         this.input = inputField.text;
-        Debug.Log("Input Text: " + input);
+        //Debug.Log("Input Text: " + input);
     }
 
     public string getText()
     {
-		Debug.Log(getBool);
+		//Debug.Log(getBool);
         return this.input;
     }
 }

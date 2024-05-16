@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 1145291397}
   - component: {fileID: 1145291396}
   - component: {fileID: 1145291394}
+  - component: {fileID: 1145291398}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -323,7 +324,31 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1145291398}
+        m_TargetAssemblyTypeName: InputHandlingWithEvent, Assembly-CSharp
+        m_MethodName: SaveText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1866774053}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: LoadNextScene
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -418,6 +443,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145291393}
   m_CullTransparentMesh: 1
+--- !u!114 &1145291398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145291393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb767ada83ac76a4ab470c69c5282233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputField: {fileID: 1145291394}
 --- !u!1 &1512080922
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +618,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866774047}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c55f346ea72974b8292c6beda94669b8, type: 3}
   m_Name: 
@@ -681,7 +719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0b16d9a324a4931a4996e23db25cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputHandler: {fileID: 1866774048}
 --- !u!1 &1886370274
 GameObject:
   m_ObjectHideFlags: 0

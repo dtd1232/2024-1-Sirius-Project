@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {   
-    public inputHandling inputHandler;
     private string currentText;
     private string currentSceneName;
 
@@ -13,40 +12,27 @@ public class SceneSwitcher : MonoBehaviour
     {
         currentSceneName = SceneManager.GetActiveScene().name; // Set the current scene name at start
     }
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (inputHandler.getText() != null)
-            {
-                currentText = inputHandler.getText().ToLower();
-            }
 
-            if (!string.IsNullOrEmpty(currentText))
-            {
-                LoadNextScene(currentText);
-                currentText = "";
-            }
-        }
-    }
-
-    void LoadNextScene(string switchSceneText) 
+    public void LoadNextScene(string switchSceneText) 
     {
+
+        currentText = switchSceneText.ToLower();
+        Debug.Log(currentText);
+
         switch (currentSceneName)
         {
             case "Main": 
-                if (switchSceneText == "options")
+                if (currentText == "options")
                     SceneManager.LoadScene("Options");
                 else if (switchSceneText == "start")
-                    SceneManager.LoadScene("Select_chr");
+                    SceneManager.LoadScene("MinuckSampleScene3");
                 break;
             case "Options": 
-                if (switchSceneText == "main")
+                if (currentText == "main")
                     SceneManager.LoadScene("Main");
                 break;
-            case "Select_chr": 
-                if (switchSceneText == "main")
+            case "MinuckSampleScene3": 
+                if (currentText == "main")
                     SceneManager.LoadScene("Main");
                 break;
             default:
