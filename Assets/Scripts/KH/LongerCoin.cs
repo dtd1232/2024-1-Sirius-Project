@@ -13,7 +13,7 @@ public class LongerCoin : MonoBehaviour
     bool isCorrect;
     void Start()
     {
-        handling = GameObject.Find("Canvas");
+        handling = GameObject.Find("InputField (TMP)");
     }
 
     void Awake(){
@@ -23,7 +23,7 @@ public class LongerCoin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input = handling.gameObject.GetComponent<inputHandling>().getText();
+        input = handling.gameObject.GetComponent<InputHandlingWithEvent>().getText();
     }
 
     void OnTriggerEnter2D(Collider2D other){

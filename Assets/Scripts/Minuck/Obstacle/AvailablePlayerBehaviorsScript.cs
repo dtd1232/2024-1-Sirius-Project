@@ -30,7 +30,7 @@ public class AvailablePlayerBehaviorsScript : MonoBehaviour
 
         for (int i = 0; i < AvailablePlayerBehaviorPanelList.Count; i++)
         {
-            AvailablePlayerBehaviorPanelList[i].GetComponent<RectTransform>().localPosition = new Vector3(90 * i, 0, 0);
+            AvailablePlayerBehaviorPanelList[i].GetComponent<RectTransform>().localPosition = new Vector3(180 * i, 0, 0);
         }
 
     }

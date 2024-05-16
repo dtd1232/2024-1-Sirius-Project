@@ -37,7 +37,6 @@ public class inputHandling : MonoBehaviour
 
     public string getText()
     {
-        getBool = true;
 		Debug.Log(getBool);
         return this.input;
     }

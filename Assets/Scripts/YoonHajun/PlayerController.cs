@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Die();
+            //Die();
         }
 
         ResetNextAction();
