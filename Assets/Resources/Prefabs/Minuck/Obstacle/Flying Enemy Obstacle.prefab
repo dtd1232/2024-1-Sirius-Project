@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 220745365649623187}
   - component: {fileID: 5303518054738507691}
   - component: {fileID: 5974041199261097103}
+  - component: {fileID: 7896197866821134424}
   m_Layer: 0
   m_Name: Flying Enemy Obstacle
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 8596640243658272642, guid: 5d4daff38e3d9174b873918abcf2c1d4, type: 3}
   m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,4 +144,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6be2d382612ab49a3f44e56e8f468a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleType: 0
   thisPassKeywords: []
+  speed: 5
+--- !u!95 &7896197866821134424
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645146724127983780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e9657f9b6ede462dbc1a4ac173ed5d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

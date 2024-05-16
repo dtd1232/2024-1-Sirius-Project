@@ -2481,6 +2481,8 @@ GameObject:
   - component: {fileID: 1549339638}
   - component: {fileID: 1549339637}
   - component: {fileID: 1549339643}
+  - component: {fileID: 1549339644}
+  - component: {fileID: 1549339645}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2567,7 +2569,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549339636}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a6b000409e624c0a806255d85c98570, type: 3}
   m_Name: 
@@ -2689,6 +2691,33 @@ MonoBehaviour:
   IncorrectKeywordEventWithInput:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1549339644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549339636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71a81fbc44f1184e8a1d75c0fc5e7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpPower: 5
+--- !u!114 &1549339645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549339636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e58b5a8ce46c7b4fa4e3ef851a94cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinProbability: 100
+  coin: 0
 --- !u!1 &1551144108
 GameObject:
   m_ObjectHideFlags: 0

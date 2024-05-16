@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4337249225854972977}
   - component: {fileID: 1682935856288707402}
   - component: {fileID: 1249641421532081575}
+  - component: {fileID: 241122493005607760}
   m_Layer: 0
   m_Name: Box Obstacle
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 8596640243658272642, guid: 5d4daff38e3d9174b873918abcf2c1d4, type: 3}
   m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,4 +144,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb8a8a6d972b1a4f97e797b8e37ecf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleType: 0
   thisPassKeywords: []
+  speed: 5
+--- !u!95 &241122493005607760
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4751605718497610341}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e9657f9b6ede462dbc1a4ac173ed5d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
